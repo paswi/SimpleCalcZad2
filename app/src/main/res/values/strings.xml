@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SimpleCalc</string>
+    <string name="log_label">Log:</string>
+    <string name="simple_calc_button">Kalkulator prosty</string>
+    <string name="programmer_calc_button">Kalkulator programisty</string>
+    <string name="number_a_label">A:</string>
+    <string name="number_b_label">B:</string>
+    <string name="result_label">Result:</string>
+    <string name="button_and_label">A AND B</string>
+</resources>

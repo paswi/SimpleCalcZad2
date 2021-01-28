@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity{
                 .commit();
     }
     public void buttonAndClick(View v) {
-        EditText editTextA = findViewById(R.id.editTextNumber1);
-        EditText editTextB = findViewById(R.id.editTextNumber2);
-        EditText editTextResult = findViewById(R.id.editTextNumberResult);
-        EditText editTextResultBinary = findViewById(R.id.editTextNumberResultBinary);
+        EditText editTextA = findViewById(R.id.editTextNumber4);
+        EditText editTextB = findViewById(R.id.editTextNumber5);
+        EditText editTextResult = findViewById(R.id.editTextNumberResult3);
+        EditText editTextResultBinary = findViewById(R.id.editTextNumberResultBinary3);
 
         int a,b;
         try {
@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity{
             b = Integer.parseInt(editTextB.getText().toString());
         } catch (Exception e) {
             b = 0;
-            editTextB.setText("0");
+            editTextB.setText("");//setText("0");
         }
-        int result = a & b;
+        int result = a * b;
 
         editTextResult.setText(Integer.toString(result));
         editTextResultBinary.setText(Integer.toBinaryString(result));

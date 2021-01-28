@@ -40,25 +40,25 @@
 -->
 
     <Button
-        android:id="@+id/buttonSimpleFragment"
-        android:layout_width="94dp"
-        android:layout_height="36dp"
-        android:onClick="onClickSimple"
-        android:text="@string/simple_calc_button"
-        app:layout_constraintEnd_toStartOf="@+id/buttonProgrammerFragment"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/buttonProgrammerFragment"
-        android:layout_width="103dp"
-        android:layout_height="36dp"
+        android:layout_width="142dp"
+        android:layout_height="38dp"
         android:onClick="onClickProg"
-        android:text="@string/programmer_calc_button"
+        android:text="PROGRAMISTY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonSimpleFragment"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSimpleFragment"
+        android:layout_width="138dp"
+        android:layout_height="38dp"
+        android:onClick="onClickSimple"
+        android:text="PROSTY"
+        app:layout_constraintEnd_toStartOf="@+id/buttonProgrammerFragment"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout

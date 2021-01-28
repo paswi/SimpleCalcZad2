@@ -6,11 +6,17 @@ import androidx.fragment.app.FragmentManager;
 
 import android.app.FragmentManagerNonConfig;
 import android.os.Bundle;
+import android.text.DynamicLayout;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
 
     @Override
@@ -25,11 +31,15 @@ public class MainActivity extends AppCompatActivity{
 
         Fragment FirstFragment = new SimpleCalcFrag();
         Fragment SecondFragment = new ProgCalcFrag();
+        Fragment ThirdFragment = new viewFragmentLog();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.frameView, FirstFragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.frameViewLog, ThirdFragment).commit();
         //log("Wykonano onCreate()");
-        };
+    }
+
+    ;
 
 
     public void onClickSimple(View v) {
@@ -38,24 +48,28 @@ public class MainActivity extends AppCompatActivity{
         fragmentManager.beginTransaction()
                 .replace(R.id.frameView, fragment)
                 .commit();
-        }
+        //log("Wykonano onCreate()");
+    }
+
     public void onClickProg(View v) {
         Fragment fragment = new ProgCalcFrag();
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.frameView, fragment)
                 .commit();
+        //log("Wykonano onCreate()");
     }
+
     public void buttonAndClick(View v) {
         EditText editTextA = findViewById(R.id.editTextNumber4);
         EditText editTextB = findViewById(R.id.editTextNumber5);
         EditText editTextResult = findViewById(R.id.editTextNumberResult3);
         EditText editTextResultBinary = findViewById(R.id.editTextNumberResultBinary3);
 
-        int a,b;
+        int a, b;
         try {
             a = Integer.parseInt(editTextA.getText().toString());
-        } catch(Exception e) {
+        } catch (Exception e) {
             a = 0;
             editTextA.setText("0");
         }
@@ -71,9 +85,7 @@ public class MainActivity extends AppCompatActivity{
         editTextResultBinary.setText(Integer.toBinaryString(result));
     }
 
-}
 
-  /*
     @Override
     protected void onStart() {
         super.onStart();
@@ -116,16 +128,16 @@ public class MainActivity extends AppCompatActivity{
         log("Wykonano onRestart()");
     }
 
-    public void buttonProgrammerClick(View v) {
+/*    public void buttonProgrammerClick(View v) {
         Intent programmerCalcIntent = new Intent(this, ProgrammerCalcActivity.class);
         startActivity(programmerCalcIntent);
-    }
+    }*/
 
-    private void log(String text) {
-        EditText textEditLog = findViewById(R.id.editTextLog);
-        Editable logText = textEditLog.getText();
+    public void log(String text) {
+        EditText textEditLog = findViewById(R.id.LogBody);
+        Editable logTextBody = textEditLog.getText();
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        logText.insert(0, dateFormat.format(new Date()) + ": " + text + '\n');
-        textEditLog.setText(logText);
+        logTextBody.insert(0, dateFormat.format(new Date()) + ": " + text + '\n');
+        textEditLog.setText(logTextBody);
     }
-*/
+}

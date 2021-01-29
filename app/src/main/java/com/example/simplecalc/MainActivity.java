@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         //log("Wykonano onCreate()");
     }
 
-    public void buttonAndClick(View v) {
+    public void buttonMultiplicationClick(View v) {
         EditText editTextA = findViewById(R.id.editTextNumber4);
         EditText editTextB = findViewById(R.id.editTextNumber5);
         EditText editTextResult = findViewById(R.id.editTextNumberResult3);
@@ -85,6 +85,159 @@ public class MainActivity extends AppCompatActivity {
         editTextResultBinary.setText(Integer.toBinaryString(result));
     }
 
+    public void buttonAdditionClick(View v) {
+        EditText editTextA = findViewById(R.id.editTextNumber4);
+        EditText editTextB = findViewById(R.id.editTextNumber5);
+        EditText editTextResult = findViewById(R.id.editTextNumberResult3);
+        EditText editTextResultBinary = findViewById(R.id.editTextNumberResultBinary3);
+
+        int a, b;
+        try {
+            a = Integer.parseInt(editTextA.getText().toString());
+        } catch (Exception e) {
+            a = 0;
+            editTextA.setText("0");
+        }
+        try {
+            b = Integer.parseInt(editTextB.getText().toString());
+        } catch (Exception e) {
+            b = 0;
+            editTextB.setText("");//setText("0");
+        }
+        int result = a + b;
+
+        editTextResult.setText(Integer.toString(result));
+        editTextResultBinary.setText(Integer.toBinaryString(result));
+    }
+
+    public void buttonDivideClick(View v) {
+        EditText editTextA = findViewById(R.id.editTextNumber4);
+        EditText editTextB = findViewById(R.id.editTextNumber5);
+        EditText editTextResult = findViewById(R.id.editTextNumberResult3);
+        EditText editTextResultBinary = findViewById(R.id.editTextNumberResultBinary3);
+
+        int a, b;
+        try {
+            a = Integer.parseInt(editTextA.getText().toString());
+        } catch (Exception e) {
+            a = 0;
+            editTextA.setText("0");
+        }
+        try {
+            b = Integer.parseInt(editTextB.getText().toString());
+        } catch (Exception e) {
+            b = 0;
+            editTextB.setText("");//setText("0");
+        }
+        String Result;
+        if (b != 0){
+            int result = a / b;
+        editTextResult.setText(Integer.toString(result));
+        editTextResultBinary.setText(Integer.toBinaryString(result));
+        }
+        else
+            Result = "Cannot divide by 0.";
+    }
+
+    public void buttonSubtractClick(View v) {
+        EditText editTextA = findViewById(R.id.editTextNumber4);
+        EditText editTextB = findViewById(R.id.editTextNumber5);
+        EditText editTextResult = findViewById(R.id.editTextNumberResult3);
+        EditText editTextResultBinary = findViewById(R.id.editTextNumberResultBinary3);
+
+        int a, b;
+        try {
+            a = Integer.parseInt(editTextA.getText().toString());
+        } catch (Exception e) {
+            a = 0;
+            editTextA.setText("0");
+        }
+        try {
+            b = Integer.parseInt(editTextB.getText().toString());
+        } catch (Exception e) {
+            b = 0;
+            editTextB.setText("");//setText("0");
+        }
+        int result = a - b;
+
+        editTextResult.setText(Integer.toString(result));
+        editTextResultBinary.setText(Integer.toBinaryString(result));
+    }
+
+    public void buttonANDDClick(View v) {
+        EditText editTextA = findViewById(R.id.editTextNumber4);
+        EditText editTextB = findViewById(R.id.editTextNumber5);
+        EditText editTextResult = findViewById(R.id.editTextNumberResult3);
+        EditText editTextResultBinary = findViewById(R.id.editTextNumberResultBinary3);
+
+        int a, b;
+        try {
+            a = Integer.parseInt(editTextA.getText().toString());
+        } catch (Exception e) {
+            a = 0;
+            editTextA.setText("0");
+        }
+        try {
+            b = Integer.parseInt(editTextB.getText().toString());
+        } catch (Exception e) {
+            b = 0;
+            editTextB.setText("");//setText("0");
+        }
+        int result = a & b;
+
+        editTextResult.setText(Integer.toString(result));
+        editTextResultBinary.setText(Integer.toBinaryString(result));
+    }
+
+    public void buttonXORClick(View v) {
+        EditText editTextA = findViewById(R.id.editTextNumber4);
+        EditText editTextB = findViewById(R.id.editTextNumber5);
+        EditText editTextResult = findViewById(R.id.editTextNumberResult3);
+        EditText editTextResultBinary = findViewById(R.id.editTextNumberResultBinary3);
+
+        int a, b;
+        try {
+            a = Integer.parseInt(editTextA.getText().toString());
+        } catch (Exception e) {
+            a = 0;
+            editTextA.setText("0");
+        }
+        try {
+            b = Integer.parseInt(editTextB.getText().toString());
+        } catch (Exception e) {
+            b = 0;
+            editTextB.setText("");//setText("0");
+        }
+        int result = a ^ b;
+
+        editTextResult.setText(Integer.toString(result));
+        editTextResultBinary.setText(Integer.toBinaryString(result));
+    }
+
+    public void buttonORClick(View v) {
+        EditText editTextA = findViewById(R.id.editTextNumber4);
+        EditText editTextB = findViewById(R.id.editTextNumber5);
+        EditText editTextResult = findViewById(R.id.editTextNumberResult3);
+        EditText editTextResultBinary = findViewById(R.id.editTextNumberResultBinary3);
+
+        int a, b;
+        try {
+            a = Integer.parseInt(editTextA.getText().toString());
+        } catch (Exception e) {
+            a = 0;
+            editTextA.setText("0");
+        }
+        try {
+            b = Integer.parseInt(editTextB.getText().toString());
+        } catch (Exception e) {
+            b = 0;
+            editTextB.setText("");//setText("0");
+        }
+        int result = a | b;
+
+        editTextResult.setText(Integer.toString(result));
+        editTextResultBinary.setText(Integer.toBinaryString(result));
+    }
 
     @Override
     protected void onStart() {

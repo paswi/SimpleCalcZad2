@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
@@ -61,4 +62,80 @@ public class ProgCalcFrag extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_prog_calc, container, false);
     }
+
+    public void buttonXORClick(View v) {
+        EditText editTextA = getView(). findViewById(R.id.editTextNumber1);
+        EditText editTextB =  getView().findViewById(R.id.editTextNumber2);
+        EditText editTextResult =  getView().findViewById(R.id.editTextNumberResult);
+        EditText editTextResultBinary =  getView().findViewById(R.id.editTextNumberResultBinary);
+
+        int a,b;
+        try {
+            a = Integer.parseInt(editTextA.getText().toString());
+        } catch(Exception e) {
+            a = 0;
+            editTextA.setText("0");
+        }
+        try {
+            b = Integer.parseInt(editTextB.getText().toString());
+        } catch (Exception e) {
+            b = 0;
+            editTextB.setText("0");
+        }
+        int result = a ^ b;
+
+        editTextResult.setText(Integer.toString(result));
+        editTextResultBinary.setText(Integer.toBinaryString(result));
+    }
+
+    public void buttonORClick(View v) {
+        EditText editTextA = getView(). findViewById(R.id.editTextNumber1);
+        EditText editTextB =  getView().findViewById(R.id.editTextNumber2);
+        EditText editTextResult =  getView().findViewById(R.id.editTextNumberResult);
+        EditText editTextResultBinary =  getView().findViewById(R.id.editTextNumberResultBinary);
+
+        int a,b;
+        try {
+            a = Integer.parseInt(editTextA.getText().toString());
+        } catch(Exception e) {
+            a = 0;
+            editTextA.setText("0");
+        }
+        try {
+            b = Integer.parseInt(editTextB.getText().toString());
+        } catch (Exception e) {
+            b = 0;
+            editTextB.setText("0");
+        }
+        int result = a | b;
+
+        editTextResult.setText(Integer.toString(result));
+        editTextResultBinary.setText(Integer.toBinaryString(result));
+    }
+
+    public void buttonANDDClick(View v) {
+        EditText editTextA = getView(). findViewById(R.id.editTextNumber1);
+        EditText editTextB =  getView().findViewById(R.id.editTextNumber2);
+        EditText editTextResult =  getView().findViewById(R.id.editTextNumberResult);
+        EditText editTextResultBinary =  getView().findViewById(R.id.editTextNumberResultBinary);
+
+        int a,b;
+        try {
+            a = Integer.parseInt(editTextA.getText().toString());
+        } catch(Exception e) {
+            a = 0;
+            editTextA.setText("0");
+        }
+        try {
+            b = Integer.parseInt(editTextB.getText().toString());
+        } catch (Exception e) {
+            b = 0;
+            editTextB.setText("0");
+        }
+        int result = a & b;
+
+        editTextResult.setText(Integer.toString(result));
+        editTextResultBinary.setText(Integer.toBinaryString(result));
+    }
+
 }
